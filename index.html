@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Guessing Game</title>
+
+    <!-- Bootstrap and CSS here-->
+
+
+  </head>
+  <body>
+
+    <div id='app' class='container center'>
+
+      <div id='headers'>
+        <h1 id='title'>Play the Guessing Game!</h1>
+        <h3 id='subtitle'>Guess a number between 1-100!</h3>
+      </div>
+
+      <div id='main'>
+        <div id='parent-input'>
+          <input id='player-input' class='center' placeholder="#" maxlength='3' autofocus=autofocus></input>
+          <button id='submit' class='btn btn-success'>Go!</button>
+        </div>
+
+        <div id='guesses'>
+            <ul id='guess-list'>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+              <li class='guess'>-</li>
+            </ul>
+          </div>
+
+
+        <div id="menu-btns">
+          <button class='btn btn-warning'>Reset</button>
+          <button class='btn btn-info'>Hint</button>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div id='footer' class='center'>
+        <div class='row'>
+          <div class='col-md-4'>
+            <img src='fa-logo@2x_preview.png'></img>
+          </div>
+
+          <div class='col-md-4'>
+            <h4>Project by YOUR NAME HERE</h4>
+          </div>
+
+          <div class='col-md-4'>
+            <img src='grace_hopper_academy_preview.png'></img>
+          </div>
+
+
+        </div>
+    </div>
+
+  </body>
+</html>
