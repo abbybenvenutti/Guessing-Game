@@ -36,13 +36,16 @@ html {
   width: 160px;
   margin: 5% auto 50px;
   position: relative;
+  font-family: 'amatic';
 }
+
 #player-input{
   border-radius: 50%;
   font-size: 60px;
   width: 160px;
   height: 160px;
   background-color: white;
+  font-family: 'amatic';
 
 }
 
@@ -61,12 +64,15 @@ html {
   position: absolute;
   left: 110px;
   top: 110px;
+  background-color: #cc32ff;
+  color: white;
 
 }
 
 ul {
     list-style: none;
     padding: 0 25px;
+    font-family: 'amatic';
 }
 
 .guess{
@@ -79,8 +85,17 @@ ul {
 }
 
 @font-face {
-  font-family: amatic, chiller, snowtt;
-  src: url(/font/AmaticSC-Regular.ttf), url(/font/chiller.ttf), url(/font/snowtt.ttf);
+  font-family: 'amatic';
+  src: url(font/amatic.ttf);
+}
+
+@font-face{
+  font-family: 'snowtt';
+  src: url(font/snowtt.ttf);
+}
+@font-face{
+  font-family: 'flame';
+  src: url(font/flame.TTF);
 }
 
 body{
@@ -91,8 +106,9 @@ body{
 
 }
 
-#headers{
-  font-family: amatic, snowtt;
+#headers, #title, #subtitle{
+  font-family: 'amatic';
+  font-size: 45px;
   font-weight: bold;
 
 }

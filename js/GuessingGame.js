@@ -32,9 +32,11 @@ Game.prototype.playersGuessSubmission = function(guess) {
 
 Game.prototype.checkGuess = function() {
     if(this.playersGuess===this.winningNumber) {
+        this.pastGuesses.push(this.playersGuess);
+          $('#guess-list li:nth-child('+ this.pastGuesses.length +')').text(this.playersGuess);
         $('#hint, #submit').prop("disabled",true);
-        $('#subtitle').text("Press the Reset button to play again!")
-        return 'You Win!'
+        $('#subtitle').css('font-family', 'amatic').text("Press the Reset button to play again!")
+        return 'You Win! Kowabunga!'
     }
     else {
         if(this.pastGuesses.indexOf(this.playersGuess) > -1) {
@@ -44,16 +46,16 @@ Game.prototype.checkGuess = function() {
             this.pastGuesses.push(this.playersGuess);
             $('#guess-list li:nth-child('+ this.pastGuesses.length +')').text(this.playersGuess);
             if(this.pastGuesses.length === 5) {
-                $('#hint, #submit').prop("disabled",true);
-                $('#subtitle').text("Press the Reset button to play again!")
-                return 'You Lose.';
+                $('#hint, #submit, #player-input').prop("disabled",true);
+                $('#subtitle').css('font-family', 'amatic').text(`Press Reset to play again!`);
+                return 'Oh no... You lost! The winning number was ' + this.winningNumber;
             }
             else {
                 var diff = this.difference();
                 if(this.isLower()) {
-                    $('#subtitle').text("Guess higher!")
+                    $('#subtitle').css('font-family','snowtt').text("GUESS HIGHER!")
                 } else {
-                    $('#subtitle').text("Guess lower!")
+                    $('#subtitle').css('font-family', 'flame').text("GUESS LOWER!")
                 }
                 if(diff < 10) return 'You\'re burning up!';
                 else if(diff < 25) return'You\'re lukewarm.';
@@ -109,7 +111,7 @@ $(document).ready(function() {
     $('#reset').click(function() {
         game = newGame();
         $('#title').text('Play the Guessing Game!');
-        $('#subtitle').text('Guess a number between 1-100!')
+        $('#subtitle').text('Guess a number between 1-100')
         $('.guess').text('-');
         $('#hint, #submit').prop("disabled",false);
 
